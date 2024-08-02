@@ -12,16 +12,6 @@ data = {
 
 df = pd.DataFrame(data)
 
-# Metamorphic Relations 1 : Consistency under row 
-# Permutation of rows of user matrix - product
-# df = df.sample(frac=1).reset_index(drop=True)
-
-
-#Metamorphic Relations 2 : Consistency when ranking ratio changes
-# scale_factor = 2
-# df['rating'] = df['rating'] * scale_factor
-
-
 # Convert data into user-product matrix
 user_item_matrix = df.pivot(index='user_id', columns='item_id', values='rating').fillna(0)
 print(user_item_matrix)
